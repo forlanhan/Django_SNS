@@ -1,11 +1,11 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import  url, include
 from views import *
 
-urlpatterns = patterns( '',
+urlpatterns = [
 
     (r'comment/$', comment),
     (r'follow/$', follow),
     (r'like/$', like),
     (r'system/$', system),
 
- )
+]

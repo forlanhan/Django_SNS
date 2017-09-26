@@ -1,4 +1,4 @@
-from django.conf.urls import patterns,url, include
+from django.conf.urls import url, include
 from rest_framework import routers
 from restapi import views
 from rest_framework.urlpatterns import format_suffix_patterns
@@ -16,7 +16,7 @@ router.register(r'tag', views.TagViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 
-urlpatterns = patterns('',
+urlpatterns = [
 
     # url(r'^album/$', views.AlbumList.as_view()),
     # url(r'^album/(?P<pk>[0-9]+)/$', views.AlbumDetail.as_view()),
@@ -28,7 +28,7 @@ urlpatterns = patterns('',
     # url(r'^post/(?P<pk>[0-9]+)/$', views.PostDetail.as_view()),
     # url(r'^tag/$', views.TagList.as_view()),
     # url(r'^tag/(?P<pk>[0-9]+)/$', views.TagDetail.as_view()),
-)
+]
 
 urlpatterns += [
     url(r'^', include(router.urls)),

@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 from views import *
 
-urlpatterns = patterns( '',
+urlpatterns = [
 
     (r'^create$', create_post),
     (r'^delete/(?P<id>[^/]+)$', delete_post),
@@ -9,4 +9,4 @@ urlpatterns = patterns( '',
     (r'^edit/(?P<id>[^/]+)/$', edit_post),
     (r'^view/(?P<id>[^/]+)/$', view_post),
     (r'^(?P<id>[^/]+)$', get_post),
- )
+ ]

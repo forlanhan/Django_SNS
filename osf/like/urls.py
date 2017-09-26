@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import  url, include
 from views import *
 
-urlpatterns = patterns( '',
+urlpatterns = [
 
     (r'do$', dolike),
     (r'undo$', undolike),
- )
+ ]

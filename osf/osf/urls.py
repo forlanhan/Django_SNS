@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import  include, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
@@ -11,7 +11,7 @@ import settings
 from filebrowser.sites import site
 
 from views import *
-urlpatterns = patterns( '',
+urlpatterns = ['',
                           url(r'^admin/filebrowser/', include(site.urls)),
                           url( r'^grappelli/', include( 'grappelli.urls' ) ),  # grappelli URLS
                           url( r'^admin/', include( admin.site.urls ) ),
@@ -35,19 +35,19 @@ urlpatterns = patterns( '',
 
     # Uncomment the next line to enable the admin:
 
- )
+ ]
 
 
 
-urlpatterns += patterns('',url(r'^post/', include('post.urls')),)
-urlpatterns += patterns('',url(r'^spost/', include('spost.urls')),)
-urlpatterns += patterns('',url(r'^album/', include('album.urls')),)
-urlpatterns += patterns('',url(r'^comment/', include('comment.urls')),)
-urlpatterns += patterns('',url(r'^tag/', include('tag.urls')),)
-urlpatterns += patterns('',url(r'^notifications/', include('notification.urls')),)
-urlpatterns += patterns('',url(r'^like/', include('like.urls')),)
-urlpatterns += patterns('',url( r'^follow/', include('follow.urls'),),)
-urlpatterns += patterns('',url(r'^api/', include('restapi.urls')),)
+urlpatterns += ('',url(r'^post/', include('post.urls')),)
+urlpatterns += ('',url(r'^spost/', include('spost.urls')),)
+urlpatterns += ('',url(r'^album/', include('album.urls')),)
+urlpatterns += ('',url(r'^comment/', include('comment.urls')),)
+urlpatterns += ('',url(r'^tag/', include('tag.urls')),)
+urlpatterns += ('',url(r'^notifications/', include('notification.urls')),)
+urlpatterns += ('',url(r'^like/', include('like.urls')),)
+urlpatterns += ('',url( r'^follow/', include('follow.urls'),),)
+urlpatterns += ('',url(r'^api/', include('restapi.urls')),)
 #urlpatterns += patterns('',url(r'^user/', include('accounts.urls')),)
 
 urlpatterns += staticfiles_urlpatterns()
@@ -58,6 +58,6 @@ urlpatterns += staticfiles_urlpatterns()
 #     url( r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT} ), )
 
 
-urlpatterns += patterns( '', url( r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT } ),
-url( r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT} ), )
+urlpatterns += [ url( r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT } ),
+url( r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT} ), ]
     

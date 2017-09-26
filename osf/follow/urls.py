@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 from views import *
 
-urlpatterns = patterns( '',
+urlpatterns = [
     (r'^(?P<id>[^/]+)$', dofollow),
     (r'^undo/(?P<id>[^/]+)$', undofollow),
- )
+ ]

@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import url, include
 from views import *
 
-urlpatterns = patterns( '',
+urlpatterns = [
 
     (r'^create$', create_album),
     (r'^list/$', list_album ),
@@ -16,4 +16,4 @@ urlpatterns = patterns( '',
     (r'^(?P<album_id>[^/]+)/delete/photo/(?P<photo_id>[^/]+)/$', create_photo_album),
     (r'^(?P<id>[^/]+)/photos$', view_album),
 
- )
+ ]

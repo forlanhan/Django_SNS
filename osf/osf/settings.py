@@ -3,12 +3,16 @@
 import os
 import sys
 
-from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+#from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+"django.core.context_processors.debug",
+"django.core.context_processors.i18n")
 
 
 #APPEND_SLASH=False
@@ -51,14 +55,18 @@ else:
     MYSQL_PORT = '3306'
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': MYSQL_DB,
-        'USER': MYSQL_USER,
-        'PASSWORD': MYSQL_PASS,
-        'HOST': MYSQL_HOST_M,
-        'PORT': MYSQL_PORT,
-    }
+        'NAME': 'monitor',
+        'USER': 'root',
+        'PASSWORD': 'rootroot',
+        'HOST': '115.236.161.138',
+        'PORT': '3306',
+    },
 }
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -196,7 +204,6 @@ INSTALLED_APPS = (
      'django.contrib.admindocs',
     'accounts',
     'osf',
-    'south',
     # 用户注册功能所需要的应用
     'userena',
     'guardian',
